@@ -2,15 +2,13 @@
   div
     h1 The User Page
     hr
-    p User: {{ id }}
     button.btn.btn-primary(@click="goHome()") Go Home
+    hr
+    router-view
 </template>
 
 <script>
   export default {
-    props: {
-      id: {}
-    },
     methods: {
       goHome() {
         this.$router.push('/');
