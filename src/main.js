@@ -13,7 +13,12 @@ const router = new VueRouter({
     if (to.hash) { return { selector: to.hash }; }
     return { x: 0, y: 0 }
   }
-})
+});
+
+router.beforeEach((to, from, next) => {
+  console.log('global beforeEach');
+  next();  // you can pass a path object object
+});
 
 new Vue({
   el: '#app',
